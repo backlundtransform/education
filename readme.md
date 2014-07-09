@@ -1,6 +1,6 @@
 
-This application is meant to be used as a tool in teaching The teacher can easily add their own exercises that the
-studends can answer.
+This application is meant to be used as a tool in teaching The teacher can easily add their own exercises and
+students can answer them.
 
 
 
