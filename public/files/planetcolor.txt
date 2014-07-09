@@ -1,0 +1,141 @@
+"#hotjovian"
+
+
+
+"#hotearth"
+"#coldearh"
+"#earth"
+"#moon" 
+"#neptunian"
+http://jsfiddle.net/3hQdR/455/
+
+
+ var w = 2620, h = 2620; var planets = [{ R:199.11902, r:30.557344, speed:1, phi0:60.0, Name:'14 And b', color:'#coldjovian'},]; var sunradius = 165.91902; var suncolor= '#ff0000';  Dplanetsystem(planets, sunradius, suncolor, w, h); window.scrollTo(1310 - screen.width/2,1310 - screen.height/2);
+
+
+
+
+var sunradius =  60; 
+var habradius = 300;  
+var habwidth = 20;  
+var suncolor= '#fff'; 
+
+
+=0;' name='viewport' /><link href='planet.css' type='text/css' rel='stylesheet' /><script type=text/javascript src='d3.v3.min.js'></script><script type='text/javascript' src='planetscript.js'></script><body> <div id='planetarium'></div><script >  var w = 2620, h = 2620; var planets = [{ R:199.11902, r:30.557344, speed:1, phi0:60.0, Name:'14 And b', color:'#coldjovian'},]; var sunradius = 165.91902; var suncolor= '#ff0000';  Dplanetsystem(planets, sunradius, suncolor, w, h); window.scrollTo(1310 - screen.width/2,1310 - screen.height/2);
+
+planetsystem(planets,sunradius, habradius, habwidth, suncolor, w,h)
+
+
+
+function planetsystem(planets, sunradius, habradius, habwidth, suncolor, w, h){
+    
+      var t0 = Date.now();
+ 
+
+var svg = d3.select("#planetarium").insert("svg")
+        .attr("width", w).attr("height", h);
+    var def = svg.append("defs");
+var gradient = def.append("radialGradient").attr("id", "suncolor")
+.attr("gradientUnits", "objectBoundingBox").attr("gradientUnits", "objectBoundingBox").attr("fx", "50%").attr("fy", "50%");
+ 
+gradient.append("stop").attr("offset", "0%").attr("style","stop-color:#FFFFFF"); 
+gradient.append("stop").attr("offset", "40%").attr("style","stop-color:#ffff00");      
+gradient.append("stop").attr("offset", "100%").attr("style","stop-color#ffbf00"); 
+
+
+var gcoldjovian = def.append("radialGradient").attr("id", "coldjovian")
+.attr("gradientUnits", "objectBoundingBox").attr("gradientUnits", "objectBoundingBox").attr("fx", "20%").attr("fy", "20%");
+ 
+gcoldjovian.append("stop").attr("offset", "0%").attr("style","stop-color:#DFA1F0"); 
+gcoldjovian.append("stop").attr("offset", "40%").attr("style","stop-color:#B614E3");      
+gcoldjovian.append("stop").attr("offset", "100%").attr("style","stop-color#6E018C");
+    
+    var ghotjovian = def.append("radialGradient").attr("id", "hotjovian")
+.attr("gradientUnits", "objectBoundingBox").attr("gradientUnits", "objectBoundingBox").attr("fx", "20%").attr("fy", "20%");
+ 
+ghotjovian.append("stop").attr("offset", "0%").attr("style","stop-color:#DFA1F0"); 
+ghotjovian.append("stop").attr("offset", "40%").attr("style","stop-color:#E01B56");      
+ghotjovian.append("stop").attr("offset", "100%").attr("style","stop-color#6E018C");
+    
+       var gneptunian = def.append("radialGradient").attr("id", "neptunian")
+.attr("gradientUnits", "objectBoundingBox").attr("gradientUnits", "objectBoundingBox").attr("fx", "20%").attr("fy", "20%");
+ 
+gneptunian.append("stop").attr("offset", "0%").attr("style","stop-color:#fff"); 
+gneptunian.append("stop").attr("offset", "40%").attr("style","stop-color:#69BCFF");      
+    gneptunian.append("stop").attr("offset", "100%").attr("style","stop-color:#69BCFF");
+    
+    
+          var gearth = def.append("radialGradient").attr("id", "earth")
+.attr("gradientUnits", "objectBoundingBox").attr("gradientUnits", "objectBoundingBox").attr("fx", "20%").attr("fy", "20%");
+ 
+gearth.append("stop").attr("offset", "0%").attr("style","stop-color:#fff"); 
+gearth.append("stop").attr("offset", "40%").attr("style","stop-color:#12DB0B");      
+    gearth.append("stop").attr("offset", "100%").attr("style","stop-color:#1B92F2");
+    
+           var ghotearth = def.append("radialGradient").attr("id", "hotearth")
+.attr("gradientUnits", "objectBoundingBox").attr("gradientUnits", "objectBoundingBox").attr("fx", "20%").attr("fy", "20%");
+ 
+ghotearth.append("stop").attr("offset", "0%").attr("style","stop-color:#fff"); 
+ghotearth.append("stop").attr("offset", "40%").attr("style","stop-color:#FCA400");      
+    ghotearth.append("stop").attr("offset", "100%").attr("style","stop-color:#FCDF00");
+    
+        var gcoldearth = def.append("radialGradient").attr("id", "hotearth")
+.attr("gradientUnits", "objectBoundingBox").attr("gradientUnits", "objectBoundingBox").attr("fx", "20%").attr("fy", "20%");
+ 
+gcoldearth.append("stop").attr("offset", "0%").attr("style","stop-color:#fff"); 
+gcoldearth.append("stop").attr("offset", "40%").attr("style","stop-color:#DCF7F7");      
+    gcoldearth.append("stop").attr("offset", "100%").attr("style","stop-color:#69BCFF");
+    
+           var gmoon = def.append("radialGradient").attr("id", "moon")
+.attr("gradientUnits", "objectBoundingBox").attr("gradientUnits", "objectBoundingBox").attr("fx", "20%").attr("fy", "20%");
+ 
+gmoon.append("stop").attr("offset", "0%").attr("style","stop-color:#8E9191"); 
+gmoon.append("stop").attr("offset", "40%").attr("style","stop-color:#8E9191");      
+    gmoon.append("stop").attr("offset", "100%").attr("style","stop#8E9191");
+
+
+
+      
+      gradient.append("circle").attr("r",sunradius).attr("cx", w/2)
+        .attr("cy", h/2).attr("id", "sun").attr("style","fill:url(#suncolor)");
+     
+    
+
+     
+ svg.append("circle").attr("r", habradius).attr("cx", w/2)
+        .attr("cy", h/2).attr("class", "habzone").style('stroke-width', habwidth ); 
+
+      var container = svg.append("g")
+        .attr("transform", "translate(" + w/2 + "," + h/2 + ")")
+
+
+
+
+      container.selectAll("g.planet").data(planets).enter().append("g")
+        .attr("class", "planet").each(function(d, i){
+            
+         
+             svg.append("ellipse").attr("class", "orbit")
+            .attr("rx", d.R).attr("ry", d.R-100).attr("cx", w/2)
+        .attr("cy", h/2);
+            
+            
+            
+            
+            
+            
+            
+            d3.select(this).append("circle").attr("r", d.r).attr("id", "planet").attr("class", "planet").attr("cx",d.R).attr("cy", d.R-100).attr("style","fill:url("+d.color+")");
+                           d3.select(this).append("text").text(d.Name).attr("y", 0).attr("x",d.R).attr("class", "planet").attr("font-size", "12px").attr("fill", "white");
+        });
+container.append("use").attr("xlink:href","#sun" ).attr("x", -w/2)
+        .attr("y", -h/2);
+    
+    
+      d3.timer(function() {
+        var delta = (Date.now() - t0);
+        svg.selectAll(".planet").attr("transform", function(d) {
+          return "rotate(" + d.phi0 + delta * d.speed/200 + ")";
+        });
+      });}
+
