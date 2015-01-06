@@ -1,6 +1,6 @@
 
 Appen är tänkt att användas som ett verktyg i undervisning. Läraren kan enkelt lägga till egna övningar
-som användare sedan kan svara på. Appen är helt webbaserad och använder sig utav AngulaJS som frontend och Laravel som Backend. 
+som användare sedan kan svara på. Appen är helt webbaserad och använder sig utav AngularJS som frontend och Laravel som Backend. 
 
 Appen har följande struktur:
 <a href="http://imgur.com/V0HzLNy"><img src="http://i.imgur.com/V0HzLNy.png?1" title="source: imgur.com" /></a>
